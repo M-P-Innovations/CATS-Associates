@@ -1,0 +1,8 @@
+.Card {
+    max-width: 20%;
+    float: right;
+    height: 200px;
+    width: 50%;
+    z-index: 9;
+    justify-content: center;
+}
