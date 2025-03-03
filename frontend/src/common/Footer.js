@@ -1,27 +1,71 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./Common.css";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
 
-const Footer = () => {
-    return (
-        <footer className="bg-zinc-300 mt-4 fixed-bottom">
-            <div className="w-full mx-auto max-w-screen-xl md:flex md:items-center md:justify-between">
-                <ul className="flex items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-                    <li>
-                        <button className="hover:underline me-4 md:me-6">About</button>
-                    </li>
-                    <li>
-                        <button className="hover:underline">Contact</button>
-                    </li>
-                </ul>
-            </div>
-        </footer>
-
-        // <footer classNameName="card-footer bg-gray-300">
-        //     <div classNameName="container-fluid">
-        //         <b>CATS</b>
-        //     </div>
-        // </footer>
-    );
-};
+function Footer() {
+  return (
+    <footer className="footer px-4 md:px-16 lg:px-28 py-6">
+      <div className="grid gird-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h2 className="text-lg font-bold mb-4 text-white">About US</h2>
+          <p className="text-gray-300">
+            We are a team dedicated to providing best products and services to
+            our cunstomers.
+          </p>
+        </div>
+        <div>
+          <h2 className="text-lg font-bold mb-4 text-white">Quick Links</h2>
+          <ui>
+            <li>
+              <a href="/home" className="hover:underline text-gray-300">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/#" className="hover:underline text-gray-300">
+                Services
+              </a>
+            </li>
+            <li>
+              <a href="/#" className="hover:underline text-gray-300">
+                Contact
+              </a>
+            </li>
+            <li>
+              <a href="/#" className="hover:underline text-gray-300">
+                About
+              </a>
+            </li>
+          </ui>
+        </div>
+        <div>
+        <h2 className="text-lg font-bold mb-4 text-white">Follow Us</h2>
+          <ui className="flex space-x-4">
+            <li>{" "}<FaFacebook className="text-blue-500"/> {" "}
+              <a href="/#" className="hover:underline text-gray-300">
+                Facebook
+              </a>
+            </li>
+            <li>
+                <FaTwitter className="text-sky-500"/>
+              <a href="/#" className="hover:underline text-gray-300">
+                Twitter
+              </a>
+            </li>
+            <li>
+                <FaInstagram className="text-orange-500"/>
+              <a href="/#"  className="hover:underline text-gray-300">
+                Instagram
+              </a>
+            </li>
+          </ui>
+        </div>
+      </div>
+      <div className="border-t border-gray-600 p-4 text-gray-300 text-center mt-6">
+        <p>@ 2024 Mark Associate. All Rights Reserved.</p>
+      </div>
+    </footer>
+  );
+}
 
 export default Footer;

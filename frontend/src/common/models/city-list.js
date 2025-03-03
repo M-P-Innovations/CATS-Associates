@@ -1,4 +1,4 @@
-export const citieLists = [
+export const cityLists = [
     "Ahmednagar",
     "Akola",
     "Alibag",

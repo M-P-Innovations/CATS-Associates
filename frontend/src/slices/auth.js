@@ -3,13 +3,13 @@ import { setMessage } from "./message";
 
 import AuthService from "../services/auth.service";
 
-const user = JSON.parse(localStorage.getItem("user"));
+const user = JSON.parse(sessionStorage.getItem("user"));
 
-export const register = createAsyncThunk(
-  "auth/register",
-  async ({ username, name, email, city, password }, thunkAPI) => {
+export const registerUser = createAsyncThunk(
+  "auth/registerUser",
+  async ({ username, name, email, city, mobile_number, password, logoValue }, thunkAPI) => {
     try {
-      const response = await AuthService.register(username, name, email, city, password);
+      const response = await AuthService.register(username, name, email, city, mobile_number, password, logoValue);
       thunkAPI.dispatch(setMessage(response.data.message));
       return response.data;
     } catch (error) {
@@ -104,10 +104,10 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   extraReducers: {
-    [register.fulfilled]: (state, action) => {
+    [registerUser.fulfilled]: (state, action) => {
       state.isLoggedIn = false;
     },
-    [register.rejected]: (state, action) => {
+    [registerUser.rejected]: (state, action) => {
       state.isLoggedIn = false;
     },
     [login.fulfilled]: (state, action) => {

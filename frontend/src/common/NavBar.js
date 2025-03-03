@@ -1,77 +1,82 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../slices/auth";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import markLogo from "./assets/images/logo-no-background.png"
-import "./Common.css"
-// import Profile from "./Profile"
+import React, { useState, useRef, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import markLogo from "./assets/images/CATS.jpeg";
+import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
+import "./Common.css";
+import SidebarData from "./SidebarData"; // SidebarData as separate component
+import { Navbar } from "react-bootstrap";
 
 const NavBar = () => {
-    const [showAdminBoard, setShowAdminBoard] = useState(null);
-    const { user: currentUser } = useSelector((state) => state.auth);
-    // const [openProfile, setProfile] = useState(false)
-    const dispatch = useDispatch();
+  const [sidebar, setSidebar] = useState(false);
+  const sidebarRef = useRef(null);
+  const { user: currentUser } = useSelector((state) => state.auth);
 
-    useEffect(() => {
-        if (currentUser) {
-            console.log(currentUser)
-            setShowAdminBoard(currentUser.user.user_role.includes("Admin"));
-        } else {
-            setShowAdminBoard(false);
-        }
+  // Toggle sidebar
+  const showSidebar = () => setSidebar(!sidebar);
 
-    }, [currentUser]);
+  // Close sidebar on logout
+  useEffect(() => {
+    if (!currentUser) {
+      setSidebar(false);
+    }
+  }, [currentUser]);
 
-    // const toggleProfile = () => {
-    //     setProfile(!openProfile);
-    // }
+  // Close sidebar if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setSidebar(false);
+      }
+    };
 
-    const logOut = useCallback(() => {
-        dispatch(logout());
-    }, [dispatch]);
+    const handleClickInside = (event) => {
+      if (sidebarRef.current && sidebarRef.current.contains(event.target) && event.target.tagName === 'A') {
+        setSidebar(false); // Close sidebar on link click
+      }
+    };
 
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("click", handleClickInside);
 
-    return (
-        <>
-            <Navbar className="bg-zinc-300 fixed-top" expand="lg">
-                <Container>
-                    <Navbar.Brand className="w-40" href="#">
-                        <img src={markLogo} alt="cover" />
-                    </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ml-auto">
-                            {currentUser ? (
-                                <>
-                                    <li className="nav-item">
-                                        <a className="nav-link active" aria-current="page" href="/home">Home</a>
-                                    </li>
-                                    {showAdminBoard && (
-                                        <li className="nav-item">
-                                            <a className="nav-link active" href="/admin">Admin</a>
-                                        </li>)}
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("click", handleClickInside);
+    };
+  }, [sidebarRef]);
 
-                                    <img onClick={logOut} className="w-10 h-10 p-1 dropdown-toggle rounded-full ring-2 ring-dark-300 dark:ring-gray-500 transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-110 duration-300 ..." src={require(`./assets/images/avatars/${currentUser.user.logoValue}`)} alt="logo" id="navbarDropdown" data-dropdown-toggle="userDropdown" data-dropdown-placement="bottom-start" />
-
-                                </>
-                            ) : (
-                                <>
-                                    <li className="nav-item">
-                                        <a className="nav-link active" aria-current="page" href="/login">Login</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link active" aria-current="page" href="/register">Register</a>
-                                    </li>
-                                </>
-                            )}
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
-        </>
-
-    );
+  return (
+    <>
+      <Navbar className="bg-zinc-300 fixed-top px-0" expand="lg">
+        {currentUser && (
+          <Link to="#" className="menu-bars">
+            <FaIcons.FaBars color="balck" onClick={showSidebar} />
+          </Link>
+        )}
+        <Navbar.Brand className="w-40" href="#">
+          <img className="ml-2 mb-2 CATS-logo" style={{ width: '45px', height: '45px' }} src={markLogo} alt="cover" />
+        </Navbar.Brand>
+        
+        {currentUser && (
+          <nav
+            ref={sidebarRef}
+            className={sidebar ? "nav-menu active" : "nav-menu"}
+          >
+            <div className="close-sidebar-icon">
+              <Link to="#" className="close-sidebar" onClick={showSidebar}>
+                <AiIcons.AiOutlineClose />
+              </Link>
+            </div>
+            <ul className="nav-menu-items">
+              {/* Render SidebarData as HTML elements */}
+              <SidebarData />
+            </ul>
+          </nav>
+        )}
+      </Navbar>
+    </>
+  );
 };
 
 export default NavBar;
