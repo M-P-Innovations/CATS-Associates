@@ -12,6 +12,8 @@ This application leverages AWS serverless technologies to provide a scalable, co
 
 The project is built using AWS Serverless technologies:
 
+![alt text](image-1.png)
+
 ### **Frontend (React Website Hosting)**
 
 - **Amazon S3** - Hosts the static React application.
@@ -35,7 +37,25 @@ The project is built using AWS Serverless technologies:
 
 ## 🎯 Features
 
-✅ **Case Registration**: BO Officers can register new cases in the system. ✅ **Case Assignment**: Assign cases to FIOs for field investigation. ✅ **Investigation Reporting**: FIOs can upload investigation details, findings, and supporting documents. ✅ **Admin Notifications**: Admins receive real-time email updates regarding case status. ✅ **Document Storage**: Secure storage of investigation documents and reports in Amazon S3. ✅ **Secure and Scalable**: Fully serverless architecture for high availability and cost efficiency. ✅ **Audit Logging**: Logs all case-related actions for security and compliance. ✅ **Multi-Environment Support**: Easily deployable to development, staging, and production environments.
+✅ **Case Registration**: BO Officers can register new cases in the system.
+
+✅ **Case Assignment**: Assign cases to FIOs for field investigation.
+
+✅ **Investigation Reporting**: FIOs can upload investigation details, findings, and supporting documents.
+
+✅ **Admin Notifications**: Admins receive real-time email updates regarding case status.
+
+✅ **Document Storage**: Secure storage of investigation documents and reports in Amazon S3.
+
+✅ **Secure and Scalable**: Fully serverless architecture for high availability and cost efficiency.
+
+✅ **Audit Logging**: Logs all case-related actions for security and compliance.
+
+✅ **Multi-Environment Support**: Easily deployable to development, staging, and production environments.
+
+✅ **Role-Based Access Control (RBAC)**: Ensures different user roles (Admin, BO Officer, FIO) have appropriate permissions.
+
+✅ **CI/CD Implementation**: Automated deployment pipeline using GitLab CI/CD for seamless updates.
 
 ---
 
@@ -88,6 +108,14 @@ terraform init
 terraform apply -auto-approve
 ```
 
+## CI/CD Pipeline:
+
+- Implemented using GitLab CI/CD for automatic deployments.
+
+- Upon code commits, the pipeline builds and deploys updates to AWS services.
+
+- Separate environments for development, testing, and production.
+
 #### **Domain Setup**:
 
 - Use Amazon Route 53 to manage custom domains and subdomains.
@@ -112,6 +140,10 @@ Contributions are welcome! Please follow these steps:
 3. Commit your changes with descriptive messages.
 4. Push your changes and create a pull request.
 
+---
+
+## Link
+ - (https://mark-associates.com)
 ---
 
 ## 📜 License
