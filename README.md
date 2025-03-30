@@ -142,8 +142,6 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## Link
- - (https://mark-associates.com)
 ---
 
 ## 📜 License
