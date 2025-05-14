@@ -153,8 +153,30 @@ This project is licensed under the [MIT License](LICENSE).
 ## 📞 Contact
 
 For any questions or feedback, feel free to reach out:
+## 📞 Contact
 
-- **Email**: [sabademayur@gmail.com](mailto\:sabademayur@gmail.com)
-- **LinkedIn**: [www.linkedin.com/in/mayur-sabade](https://www.linkedin.com/in/mayur-sabade)
-- **GitHub**: [https://github.com/mayur0319](ttps://github.com/mayur0319)
+For any questions or feedback, feel free to reach out:
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td valign="top">
+      <strong>Mayur Sabade</strong>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:sabademayur@gmail.com">sabademayur@gmail.com</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mayur-sabade">linkedin.com/in/mayur-sabade</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/mayur0319">mayur0319</a></li>
+      </ul>
+    </td>
+    <td valign="top" style="padding-left: 90px;">
+      <strong>Pranav Patil</strong>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:pranavpatil8017@gmail.com">pranavpatil8017@gmail.com</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/pranav-patil-1014641a7">linkedin.com/in/pranav-patil</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/Pranav-Patill">Pranav-Patill</a></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+
 
