@@ -31,7 +31,6 @@ The project is built using AWS Serverless technologies:
 
 - **Amazon Simple Email Service (SES)** - Sends email notifications about case updates.
 - **Amazon S3** - Stores case-related documents, images, and evidence.
-- **AWS Cognito** - Handles user authentication and authorization (if applicable).
 
 ---
 
@@ -142,8 +141,6 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
----
-
 ## 📜 License
 
 This project is licensed under the [MIT License](LICENSE).
@@ -153,9 +150,7 @@ This project is licensed under the [MIT License](LICENSE).
 ## 📞 Contact
 
 For any questions or feedback, feel free to reach out:
-## 📞 Contact
 
-For any questions or feedback, feel free to reach out:
 <table border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td valign="top">
@@ -176,7 +171,3 @@ For any questions or feedback, feel free to reach out:
     </td>
   </tr>
 </table>
-
-
-
-
