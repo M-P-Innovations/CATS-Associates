@@ -67,7 +67,7 @@ The project is built using AWS Serverless technologies:
 - **Notification**: Amazon SES
 - **CDN & Security**: Amazon CloudFront, Route 53, ACM
 - **Infrastructure as Code**: Terraform & Terragrunt
-- **CI/CD**: GitLap Pipelines
+- **CI/CD**: GitLab Pipelines
 
 ---
 
