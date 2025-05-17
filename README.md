@@ -63,11 +63,11 @@ The project is built using AWS Serverless technologies:
 - **Frontend**: React.js, TypeScript
 - **Backend**: AWS Lambda (Node.js/Python)
 - **Database**: Amazon DynamoDB
-- **Authentication**: AWS Cognito
 - **Storage**: Amazon S3
 - **Notification**: Amazon SES
 - **CDN & Security**: Amazon CloudFront, Route 53, ACM
 - **Infrastructure as Code**: Terraform & Terragrunt
+- **CI/CD**: GitLap Pipelines
 
 ---
 
